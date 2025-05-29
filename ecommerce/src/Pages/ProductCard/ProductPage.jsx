@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ProductList from '../Components/ProductList';
+import ProductList from '../../Components/ProductList/ProductList';
 
 const ProductPage = () => {
   const { category } = useParams();

@@ -1,0 +1,29 @@
+.product-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin: 30px 0 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #b37a59;
+  border-radius: 2px;
+}

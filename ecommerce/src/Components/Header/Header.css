@@ -17,7 +17,7 @@
   object-fit: contain;
 }
 
-/* Liens centrés */
+
 .nav-links {
   position: absolute;
   left: 50%;
@@ -41,7 +41,7 @@
   color: #b37a59;
 }
 
-/* Panier à droite */
+
 .cart-icon {
   display: flex;
   align-items: center;
