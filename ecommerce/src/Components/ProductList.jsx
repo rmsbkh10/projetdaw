@@ -1,10 +1,12 @@
-import products from "../data/products";
-import ProductCard from "./ProductCard";
+import Products from '../Data/Products';
+
+
+import ProductCard from "./ProductCard/ProductCard";
 
 function ProductList() {
   return (
     <div className="product-list">
-      {products.map((p) => (
+      {Products.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}
     </div>
