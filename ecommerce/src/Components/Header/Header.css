@@ -49,6 +49,7 @@
   cursor: pointer;
   color: black;
   margin-right: 10px;
+
 }
 
 .cart-count {
@@ -61,4 +62,7 @@
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 50%;
+}
+.cart-icon  :hover{
+  color: #b37a59;
 }

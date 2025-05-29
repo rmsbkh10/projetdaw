@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import logo from '../../Assets/logo.jpg';
 import { FaShoppingCart } from 'react-icons/fa'; 
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className="header">
@@ -11,14 +12,14 @@ const Header = () => {
 
       <nav>
         <ul className="nav-links">
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Produits</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="Contact">Contact</a></li>
         </ul>
       </nav>
 
       <div className="cart-icon">
-        <FaShoppingCart size={28} />
+       <Link to="/cart"> <FaShoppingCart size={28} /> </Link>
         <span className="cart-count">0</span>
       </div>
     </header>
