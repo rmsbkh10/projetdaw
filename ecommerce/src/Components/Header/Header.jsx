@@ -3,7 +3,11 @@ import './Header.css';
 import logo from '../../Assets/logo.jpg';
 import { FaShoppingCart } from 'react-icons/fa'; 
 import { Link } from 'react-router-dom';
+import { useCart } from '../../CartContext'; 
+
 const Header = () => {
+  const { cart } = useCart(); 
+
   return (
     <header className="header">
       <div className="logo">
@@ -12,15 +16,17 @@ const Header = () => {
 
       <nav>
         <ul className="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="Contact">Contact</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/products">Products</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
 
       <div className="cart-icon">
-       <Link to="/cart"> <FaShoppingCart size={28} /> </Link>
-        <span className="cart-count">0</span>
+        <Link to="/cart">
+          <FaShoppingCart size={28} />
+        </Link>
+        <span className="cart-count">{cart.length}</span> 
       </div>
     </header>
   );
