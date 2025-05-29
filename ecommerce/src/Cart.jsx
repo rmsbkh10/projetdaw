@@ -1,7 +1,8 @@
 import { useCart } from './CartContext';
 
 function Cart() {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
+
   const totalPrice = cart.reduce((sum, item) => {
     const price = Number(item.price);
     return sum + (isNaN(price) ? 0 : price);
@@ -17,17 +18,37 @@ function Cart() {
         <>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             {cart.map((item, index) => (
-              <li key={index} style={{
-                borderBottom: '1px solid #d8b89c',
-                padding: '10px 0',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}>
-                <span>{item.name}</span>
-                <span style={{ fontWeight: 'bold' }}>
-                  {Number(item.price).toLocaleString()} DA
-                </span>
+              <li
+                key={index}
+                style={{
+                  borderBottom: '1px solid #d8b89c',
+                  padding: '10px 0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <div>
+                  <span style={{ marginRight: '20px' }}>{item.name}</span>
+                  <span style={{ fontWeight: 'bold' }}>
+                    {Number(item.price).toLocaleString()} DA
+                  </span>
+                </div>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  style={{
+                    backgroundColor: '#b37a59',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    padding: '6px 12px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    transition: 'background-color 0.3s ease'
+                  }}
+                >
+                  Retirer
+                </button>
               </li>
             ))}
           </ul>

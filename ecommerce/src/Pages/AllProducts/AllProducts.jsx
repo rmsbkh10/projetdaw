@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import allProducts from '../../Data/Products';
 import './AllProducts.css';
+import { useCart } from '../../CartContext'; // ✅ Import du contexte
 
 const AllProducts = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const { addToCart } = useCart(); // ✅ Utilisation du contexte
 
   const filteredProducts = allProducts.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -28,6 +30,12 @@ const AllProducts = () => {
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.price.toLocaleString()} DA</p>
+              <button
+                onClick={() => addToCart(product)}
+                className="add-to-cart-btn"
+              >
+                Ajouter au panier
+              </button>
             </div>
           ))
         ) : (
